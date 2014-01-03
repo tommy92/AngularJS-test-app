@@ -11,3 +11,6 @@ angular.module('TomsApp.controllers', [])
 	.controller('Page2Ctrl', ['$scope', ($scope) ->
 		$scope.pageTitle = 'Page 2'
 	])
+	.controller('Page3Ctrl', ['$scope', ($scope) ->
+		$scope.pageTitle = 'Page 3'
+	])

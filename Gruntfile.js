@@ -19,7 +19,8 @@ module.exports = function(grunt) {
 					'src/index.html' : 'dev/index.haml',
 					'src/main.html'  : 'dev/main.haml',
 					'src/page1.html' : 'dev/page1.haml',
-					'src/page2.html' : 'dev/page2.haml'
+					'src/page2.html' : 'dev/page2.haml',
+					'src/page3.html' : 'dev/page3.haml'
 				}
 			}
 		},

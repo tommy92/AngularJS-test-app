@@ -15,6 +15,9 @@
       }).when('/page2', {
         templateUrl: 'page2.html',
         controller: 'Page2Ctrl'
+      }).when('/page3', {
+        templateUrl: 'page3.html',
+        controller: 'Page3Ctrl'
       }).otherwise({
         redirectTo: '/'
       });
@@ -38,6 +41,10 @@
   ]).controller('Page2Ctrl', [
     '$scope', function($scope) {
       return $scope.pageTitle = 'Page 2';
+    }
+  ]).controller('Page3Ctrl', [
+    '$scope', function($scope) {
+      return $scope.pageTitle = 'Page 3';
     }
   ]);
 
