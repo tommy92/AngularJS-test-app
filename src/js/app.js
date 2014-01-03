@@ -1,14 +1,20 @@
 (function() {
   'use strict';
-  var HomeCtrl, tomsApp;
+  var tomsApp;
 
-  tomsApp = angular.module('TomsApp', ['ngRoute']);
+  tomsApp = angular.module('TomsApp', ['ngRoute', 'TomsApp.controllers']);
 
   tomsApp.config([
     '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
       $routeProvider.when('/', {
         templateUrl: 'main.html',
         controller: 'HomeCtrl'
+      }).when('/page1', {
+        templateUrl: 'page1.html',
+        controller: 'Page1Ctrl'
+      }).when('/page2', {
+        templateUrl: 'page2.html',
+        controller: 'Page2Ctrl'
       }).otherwise({
         redirectTo: '/'
       });
@@ -16,9 +22,23 @@
     }
   ]);
 
-  HomeCtrl = function($scope) {
-    $scope.name = "test";
-    return $scope.surname = "Jaworski";
-  };
+}).call(this);
+
+(function() {
+  'use strict';
+  angular.module('TomsApp.controllers', []).controller('HomeCtrl', [
+    '$scope', function($scope) {
+      $scope.name = "Tom";
+      return $scope.surname = "Jaworski";
+    }
+  ]).controller('Page1Ctrl', [
+    '$scope', function($scope) {
+      return $scope.pageTitle = 'Page 1';
+    }
+  ]).controller('Page2Ctrl', [
+    '$scope', function($scope) {
+      return $scope.pageTitle = 'Page 2';
+    }
+  ]);
 
 }).call(this);
