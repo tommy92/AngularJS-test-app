@@ -1,6 +1,7 @@
 (function() {
-  (function() {
-    return alert('ok');
-  });
+  'use strict';
+  var tomsApp;
+
+  tomsApp = angular.module('TomsApp', ['ngRoute']);
 
 }).call(this);

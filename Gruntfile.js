@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'src/css/style.css' : 'dev/css/style.scss'
+					'src/css/style.css' : 'dev/css/app.scss'
 	      }
 			}
 		},
@@ -16,7 +16,10 @@ module.exports = function(grunt) {
 		haml: {
 			dist: {
 				files: {
-					'src/index.html' : 'dev/index.haml'
+					'src/index.html' : 'dev/index.haml',
+					'src/main.html'  : 'dev/main.haml',
+					'src/page1.html' : 'dev/page1.haml',
+					'src/page2.html' : 'dev/page2.haml'
 				}
 			}
 		},
@@ -28,6 +31,14 @@ module.exports = function(grunt) {
 					dest: 'src/js/app.js'
 				}]
 		  }
+		},
+
+		uglify: {
+			js: {
+				files: {
+					'src/js/app.min.js' : 'src/js/app.js'
+				}
+			}
 		},
 
 		watch: {
@@ -43,9 +54,22 @@ module.exports = function(grunt) {
 
 			scripts: {
 				files: 'dev/js/*.coffee',
-				tasks: ['coffee']
+				tasks: ['coffee', 'uglify:js']
+			},
+
+			options: {
+				livereload: true
 			}
-		}
+		},
+
+		connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: './src'
+        }
+      }
+    }
 
 	});
 
@@ -53,6 +77,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('dev', ['watch']);
+	grunt.registerTask('dev', ['connect', 'watch']);
+
 };
