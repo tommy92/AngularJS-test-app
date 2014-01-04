@@ -1,10 +1,45 @@
 !!!
 %html{ "ng-app" => "TomsApp" }
 	%head
+		%meta{ charset: 'utf-8' }
+		%meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
 		%title Test Task for Daniel
+
 		%link{ href: 'css/style.css', rel: 'stylesheet' }
+		%link{ href: 'css/vendor/bootstrap.min.css', rel: 'stylesheet' }
+		%link{ href: 'css/vendor/bootstrap-theme.min.css', rel: 'stylesheet' }
+
+		<!--[if lt IE 9]><script src="js/vendor/html5shiv.js"></script><script src="js/vendor/respond.min.js"></script><![endif]-->
 	%body
-		.main{ "ng-view" => "" }
+		.navbar.navbar-fixed-top.navbar-inverse{ role: "navigation" }
+			.container
+				.navbar-header
+					%a{ class: "navbar-brand", href: "#" } Project name
+
+				.collapse.navbar-collapse
+					%ul.nav.navbar-nav
+						%li.active
+							%a{ href: "#" } Home
+						%li
+							%a{ href: "#about" } About
+
+		.container
+			.row.row-offcanvas.row-offcanvas-right
+				.col-xs-12.col-sm-9
+					%div{ "ng-view" => "" }
+
+				#sidebar.col-xs-6.col-sm-3.sidebar-offcanvas{ role: "navigation" }
+					.well.sidebar-nav
+						%ul.nav
+							%li Sidebar
+							%li.active
+								%a{ href: "#" } Link
+							%li
+								%a{ href: "#" } Link
+
+			%hr
+			%footer
+				%p &copy; Company 2013
 
 		%script{ src: "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" }
 		%script{ src: "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js" }
