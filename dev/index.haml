@@ -14,28 +14,42 @@
 		.navbar.navbar-fixed-top.navbar-inverse{ role: "navigation" }
 			.container
 				.navbar-header
-					%a{ class: "navbar-brand", href: "#" } Project name
+					%button.navbar-toggle{ type: "button", data: { toggle: "collapse", target: ".navbar-collapse" } }
+						%span.icon-bar
+						%span.icon-bar
+						%span.icon-bar
+					%a.navbar-brand{ href: "/" } Test task
 
 				.collapse.navbar-collapse
-					%ul.nav.navbar-nav
-						%li.active
-							%a{ href: "#" } Home
-						%li
-							%a{ href: "#about" } About
+					%ul.nav.navbar-nav{ "ng-controller" => "NavCtrl" }
+						%li{ "ng-class" => "setActiveClass('/')" }
+							%a{ href: "/" } Home
+						%li{ "ng-class" => "setActiveClass('/page1')" }
+							%a{ href: "/page1" } Page 1
+						%li{ "ng-class" => "setActiveClass('/page2')" }
+							%a{ href: "/page2" } Page 2
+						%li{ "ng-class" => "setActiveClass('/page3')" }
+							%a{ href: "/page3" } Page 3
 
 		.container
 			.row.row-offcanvas.row-offcanvas-right
-				.col-xs-12.col-sm-9
-					%div{ "ng-view" => "" }
-
-				#sidebar.col-xs-6.col-sm-3.sidebar-offcanvas{ role: "navigation" }
+				#sidebar-left.col-md-2{ role: "navigation" }
 					.well.sidebar-nav
 						%ul.nav
-							%li Sidebar
-							%li.active
-								%a{ href: "#" } Link
+							%li Left Sidebar
 							%li
-								%a{ href: "#" } Link
+								%a{ href: "/page1" } Page 1
+							%li
+								%a{ href: "/page2" } Page 2
+				.col-md-8
+					%div{ "ng-view" => "" }
+
+				#sidebar-right.col-md-2{ role: "navigation" }
+					.well.sidebar-nav
+						%ul.nav
+							%li Right Sidebar
+							%li
+								%a{ href: "/page3" } Page 3
 
 			%hr
 			%footer
@@ -44,6 +58,7 @@
 		%script{ src: "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" }
 		%script{ src: "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js" }
 		%script{ src: "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js" }
+		%script{ src: "js/vendor/bootstrap.min.js" }
 		%script{ src: "js/app.min.js" }
 
 		%script{ src: "http://localhost:35729/livereload.js" }

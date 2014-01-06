@@ -1,34 +1,10 @@
 .jumbotron
-	%h1 Hello, world!
-	%p This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.
+	%h1 {{pageTitle}}
+	%p {{bannerText}}
 .row
-	.col-6.col-sm-6.col-lg-4
-		%h2 Heading
-		%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		%p
-			%a.btn.btn-default{ href: "#" } View details &raquo;
-	.col-6.col-sm-6.col-lg-4
-		%h2 Heading
-		%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		%p
-			%a.btn.btn-default{ href: "#" } View details &raquo;
-	.col-6.col-sm-6.col-lg-4
-		%h2 Heading
-		%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		%p
-			%a.btn.btn-default{ href: "#" } View details &raquo;
-	.col-6.col-sm-6.col-lg-4
-		%h2 Heading
-		%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		%p
-			%a.btn.btn-default{ href: "#" } View details &raquo;
-	.col-6.col-sm-6.col-lg-4
-		%h2 Heading
-		%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		%p
-			%a.btn.btn-default{ href: "#" } View details &raquo;
-	.col-6.col-sm-6.col-lg-4
-		%h2 Heading
-		%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		%p
-			%a.btn.btn-default{ href: "#" } View details &raquo;
+	- 6.times do
+		.col-6.col-sm-6.col-lg-4
+			%h2 Heading
+			%p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			%p
+				%a.btn.btn-default{ href: "#" } View details &raquo;
