@@ -1,3 +1,48 @@
 body {
 	padding-top: 70px;
 }
+
+@media screen and (max-width: 768px) {
+	.container {
+		width: 100%;
+		overflow: hidden;
+		-webkit-user-drag: none;
+	}
+
+  .row-offcanvas [role="sidebar-left"],
+  .row-offcanvas [role="sidebar-right"],
+  .row-offcanvas [role="main"] {
+  	transition: .2s all ease;
+  	width: 99.9%;
+  }
+
+ 	.active-main.row-offcanvas [role="sidebar-left"],
+  .row-offcanvas [role="sidebar-left"] {
+  	margin-left: -100%;
+  	float: left;
+  }
+
+  .active-main.row-offcanvas [role="sidebar-right"],
+  .row-offcanvas [role="sidebar-right"] {
+  	margin-right: -200%;
+  	float: left;
+  }
+
+  .active-main.row-offcanvas [role="main"],
+  .row-offcanvas [role="main"] {
+  	margin-left: 0;
+  	float: left;
+  }
+
+  .active-left-sidebar {
+ 		&.row-offcanvas [role="main"] { margin-right: -100%; }
+ 		&.row-offcanvas [role="sidebar-left"] { margin-left: 0; }
+ 		&.row-offcanvas [role="sidebar-right"] { margin-right: -100%; float: right; }
+  }
+
+  .active-right-sidebar {
+  	&.row-offcanvas [role="sidebar-left"] { margin-left: -200%; }
+ 		&.row-offcanvas [role="sidebar-right"] { margin-left: 0; }
+ 		&.row-offcanvas [role="main"] { margin-left: -100%; }
+  }
+}

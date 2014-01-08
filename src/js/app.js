@@ -2,7 +2,7 @@
   'use strict';
   var tomsApp;
 
-  tomsApp = angular.module('TomsApp', ['ngRoute', 'TomsApp.controllers']);
+  tomsApp = angular.module('TomsApp', ['ngRoute', 'ngTouch', 'TomsApp.controllers']);
 
   tomsApp.config([
     '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -58,6 +58,28 @@
           return "active";
         } else {
           return "";
+        }
+      };
+    }
+  ]).controller('SwipeContent', [
+    '$scope', function($scope) {
+      $scope.setActiveView = "active-main";
+      $scope.swipeToLeft = function() {
+        if ($scope.setActiveView === "active-main") {
+          return $scope.setActiveView = "active-right-sidebar";
+        } else if ($scope.setActiveView === "active-left-sidebar") {
+          return $scope.setActiveView = "active-main";
+        } else {
+          return false;
+        }
+      };
+      return $scope.swipeToRight = function() {
+        if ($scope.setActiveView === "active-main") {
+          return $scope.setActiveView = "active-left-sidebar";
+        } else if ($scope.setActiveView === "active-right-sidebar") {
+          return $scope.setActiveView = "active-main";
+        } else {
+          return false;
         }
       };
     }

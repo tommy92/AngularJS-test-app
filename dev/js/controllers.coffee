@@ -26,3 +26,23 @@ angular.module('TomsApp.controllers', [])
 			else
 				return ""
 	])
+	.controller('SwipeContent', ['$scope', ($scope) ->
+		$scope.setActiveView = "active-main"
+
+		$scope.swipeToLeft = ->
+			if $scope.setActiveView is "active-main"
+				$scope.setActiveView = "active-right-sidebar"
+			else if $scope.setActiveView is "active-left-sidebar"
+				$scope.setActiveView = "active-main"
+			else
+				return false
+
+		$scope.swipeToRight = ->
+			if $scope.setActiveView is "active-main"
+				$scope.setActiveView = "active-left-sidebar"
+			else if $scope.setActiveView is "active-right-sidebar"
+				$scope.setActiveView = "active-main"
+			else
+				return false
+
+	])

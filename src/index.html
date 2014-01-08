@@ -38,9 +38,9 @@
         </div>
       </div>
     </div>
-    <div class='container'>
-      <div class='row row-offcanvas row-offcanvas-right'>
-        <div class='col-md-2' id='sidebar-left' role='navigation'>
+    <div class='container' ng-controller='SwipeContent'>
+      <div class='row row-offcanvas' ng-class='setActiveView' ng-swipe-left='swipeToLeft()' ng-swipe-right='swipeToRight()'>
+        <div class='col-md-2 col-xs-12 col-sm-3' id='sidebar-left' role='sidebar-left'>
           <div class='well sidebar-nav'>
             <ul class='nav'>
               <li>Left Sidebar</li>
@@ -53,10 +53,10 @@
             </ul>
           </div>
         </div>
-        <div class='col-md-8'>
+        <div class='col-md-8 col-xs-12 col-sm-6' role='main'>
           <div ng-view=''></div>
         </div>
-        <div class='col-md-2' id='sidebar-right' role='navigation'>
+        <div class='col-md-2 col-xs-12 col-sm-3' id='sidebar-right' role='sidebar-right'>
           <div class='well sidebar-nav'>
             <ul class='nav'>
               <li>Right Sidebar</li>

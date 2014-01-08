@@ -1,6 +1,6 @@
 'use strict'
 
-tomsApp = angular.module( 'TomsApp', ['ngRoute', 'TomsApp.controllers'] )
+tomsApp = angular.module( 'TomsApp', ['ngRoute', 'ngTouch', 'TomsApp.controllers'] )
 
 tomsApp.config( ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
 	$routeProvider

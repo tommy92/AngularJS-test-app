@@ -31,9 +31,9 @@
 						%li{ "ng-class" => "setActiveClass('/page3')" }
 							%a{ href: "/page3" } Page 3
 
-		.container
-			.row.row-offcanvas.row-offcanvas-right
-				#sidebar-left.col-md-2{ role: "navigation" }
+		.container{ "ng-controller" => "SwipeContent" }
+			.row.row-offcanvas{ "ng-swipe-left" => "swipeToLeft()", "ng-swipe-right" => "swipeToRight()", "ng-class" => "setActiveView" }
+				#sidebar-left.col-md-2.col-xs-12.col-sm-3{ role: "sidebar-left" }
 					.well.sidebar-nav
 						%ul.nav
 							%li Left Sidebar
@@ -41,10 +41,10 @@
 								%a{ href: "/page1" } Page 1
 							%li
 								%a{ href: "/page2" } Page 2
-				.col-md-8
+				.col-md-8.col-xs-12.col-sm-6{ role: "main" }
 					%div{ "ng-view" => "" }
 
-				#sidebar-right.col-md-2{ role: "navigation" }
+				#sidebar-right.col-md-2.col-xs-12.col-sm-3{ role: "sidebar-right" }
 					.well.sidebar-nav
 						%ul.nav
 							%li Right Sidebar
